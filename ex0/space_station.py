@@ -36,20 +36,21 @@ def main() -> None:
     print(f"Oxygen: {valid_station.oxygen_level}%")
     print(f"Operational: {valid_station.is_operational}")
 
+    print("\n=======================================")
     print("Expected validation error:")
     try:
         wrong_station = SpaceStation(
             station_id="ISS001",
             name="International Space Station",
-            crew_size=10000,
-            power_level=80,
+            crew_size=10,
+            power_level=200,
             oxygen_level=90,
             last_maintenance=datetime(2026, 8, 10, 14, 30),
             is_operational=True,
             notes="whatever",
             )
         print(f"Crew: {wrong_station.crew_size}")
-    except ValidationError as e:
+    except (ValidationError, TypeError) as e:
         print(e)
 
 
