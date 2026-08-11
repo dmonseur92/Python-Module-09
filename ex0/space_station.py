@@ -43,16 +43,18 @@ def main() -> None:
             station_id="ISS001",
             name="International Space Station",
             crew_size=10,
-            power_level=200,
-            oxygen_level=90,
+            power_level=99,
+            oxygen_level=101,
             last_maintenance=datetime(2026, 8, 10, 14, 30),
             is_operational=True,
             notes="whatever",
             )
         print(f"Crew: {wrong_station.crew_size}")
-    except (ValidationError, TypeError) as e:
-        print(e)
+    except ValidationError as e:
+        print(e.errors()[0]["msg"])
 
 
 if __name__ == "__main__":
+    print("Space Station Data Validation")
+    print("========================================\n")
     main()
