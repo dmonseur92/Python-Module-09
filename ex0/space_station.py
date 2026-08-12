@@ -52,6 +52,8 @@ def main() -> None:
         print(f"Crew: {wrong_station.crew_size}")
     except ValidationError as e:
         print(e.errors()[0]["msg"])
+    except Exception as e:
+            print(e)
 
 
 if __name__ == "__main__":

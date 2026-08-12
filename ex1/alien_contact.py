@@ -90,7 +90,7 @@ if __name__ == "__main__":
     try:
         telepathic = AlienContact(
             contact_id="AC_2025_001",
-            timestamp=datetime(2025, 8, 10, 14, 30),
+            timestamp=datetime(2025, 32, 10, 14, 30),
             location="Area 51, Nevada",
             contact_type=ContactType.TELEPATHIC,
             signal_strength=8.5,
@@ -101,3 +101,5 @@ if __name__ == "__main__":
         )
     except ValidationError as e:
         print(e.errors()[0]["msg"])
+    except Exception as e:
+        print(e)
