@@ -101,7 +101,7 @@ if __name__ == "__main__":
     print(f"Destination: {mars_attack.destination}")
     print(f"Duration: {mars_attack.duration_days}")
     print(f"Budget: ${mars_attack.budget_millions}M")
-    print(f"Crew size: ${len(mars_attack.crew)}")
+    print(f"Crew size: {len(mars_attack.crew)}")
     print("Crew members: ")
     for member in mars_attack.crew:
         print(f"- {member.name}({member.rank.value})"

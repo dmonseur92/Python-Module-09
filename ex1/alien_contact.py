@@ -77,7 +77,7 @@ if __name__ == "__main__":
     print("======================================")
     print("Valid contact report:")
     print(f"ID: {radio.contact_id}")
-    print(f"Type: {radio.contact_type}")
+    print(f"Type: {radio.contact_type.value}")
     print(f"Location: {radio.location}")
     print(f"Signal: {radio.signal_strength}/10")
     print(f"Duration: {radio.duration_minutes} minutes")
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     try:
         telepathic = AlienContact(
             contact_id="AC_2025_001",
-            timestamp=datetime(2025, 32, 10, 14, 30),
+            timestamp=datetime(2025, 12, 10, 14, 30),
             location="Area 51, Nevada",
             contact_type=ContactType.TELEPATHIC,
             signal_strength=8.5,
