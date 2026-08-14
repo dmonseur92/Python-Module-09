@@ -61,33 +61,34 @@ class AlienContact(BaseModel):
 
 
 if __name__ == "__main__":
-    radio = AlienContact(
-        contact_id="AC_2024_001",
-        timestamp=datetime(2024, 8, 10, 14, 30),
-        location="Area 51, Nevada",
-        contact_type=ContactType.RADIO,
-        signal_strength=8.5,
-        duration_minutes=45,
-        witness_count=5,
-        message_received="Greetings from Zeta Reticuli",
-        is_verified=True,
-    )
-
-    print("Alien Contact Log Validation")
-    print("======================================")
-    print("Valid contact report:")
-    print(f"ID: {radio.contact_id}")
-    print(f"Type: {radio.contact_type.value}")
-    print(f"Location: {radio.location}")
-    print(f"Signal: {radio.signal_strength}/10")
-    print(f"Duration: {radio.duration_minutes} minutes")
-    print(f"Witnesses: {radio.witness_count}")
-    print(f"Message: {radio.message_received}")
-
-    print("\n=======================================")
-    print("Expected validation error:")
 
     try:
+        radio = AlienContact(
+                contact_id="AC_2024_001",
+                timestamp=datetime(2024, 8, 10, 14, 30),
+                location="Area 51, Nevada",
+                contact_type=ContactType.RADIO,
+                signal_strength=8.5,
+                duration_minutes=45,
+                witness_count=5,
+                message_received="Greetings from Zeta Reticuli",
+                is_verified=True,
+            )
+
+        print("Alien Contact Log Validation")
+        print("======================================")
+        print("Valid contact report:")
+        print(f"ID: {radio.contact_id}")
+        print(f"Type: {radio.contact_type.value}")
+        print(f"Location: {radio.location}")
+        print(f"Signal: {radio.signal_strength}/10")
+        print(f"Duration: {radio.duration_minutes} minutes")
+        print(f"Witnesses: {radio.witness_count}")
+        print(f"Message: {radio.message_received}")
+
+        print("\n=======================================")
+        print("Expected validation error:")
+
         telepathic = AlienContact(
             contact_id="AC_2025_001",
             timestamp=datetime(2025, 12, 10, 14, 30),

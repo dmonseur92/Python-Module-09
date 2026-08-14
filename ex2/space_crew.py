@@ -55,61 +55,63 @@ class SpaceMission(BaseModel):
 if __name__ == "__main__":
     print("Space Mission Crew Validation")
     print("=========================================")
-    Sarah = CrewMember(
-        member_id="SC001",
-        name="Sarah Connor",
-        rank=Rank.COMMANDER,
-        age=30,
-        specialization="Mission Command",
-        years_experience=15,
-        is_active=True
-    )
 
-    John = CrewMember(
-        member_id="JS007",
-        name="John Smith",
-        rank=Rank.LIEUTENANT,
-        age=40,
-        specialization="Navigation",
-        years_experience=20,
-        is_active=True
-    )
-
-    Alice = CrewMember(
-        member_id="AL202",
-        name="Alice Johnson",
-        rank=Rank.OFFICER,
-        age=21,
-        specialization="Engineering",
-        years_experience=2,
-        is_active=True
-    )
-
-    mars_attack = SpaceMission(
-        mission_id="M2024_MARS",
-        mission_name="Mars Colony Establishment",
-        destination="Mars",
-        launch_date=datetime(2024, 8, 10, 14, 30),
-        duration_days=900,
-        crew=[Sarah, John, Alice],
-        mission_status="planned",
-        budget_millions=2500.0
-    )
-    print("Valid mission created:")
-    print(f"Mission: {mars_attack.mission_name}")
-    print(f"ID: {mars_attack.mission_id}")
-    print(f"Destination: {mars_attack.destination}")
-    print(f"Duration: {mars_attack.duration_days}")
-    print(f"Budget: ${mars_attack.budget_millions}M")
-    print(f"Crew size: {len(mars_attack.crew)}")
-    print("Crew members: ")
-    for member in mars_attack.crew:
-        print(f"- {member.name}({member.rank.value})"
-              f" - {member.specialization}")
-
-    print("=========================================")
-    print("Expected validation error:")
     try:
+        Sarah = CrewMember(
+                member_id="SC001",
+                name="Sarah Connor",
+                rank=Rank.COMMANDER,
+                age=30,
+                specialization="Mission Command",
+                years_experience=15,
+                is_active=True
+            )
+
+        John = CrewMember(
+            member_id="JS007",
+            name="John Smith",
+            rank=Rank.LIEUTENANT,
+            age=40,
+            specialization="Navigation",
+            years_experience=20,
+            is_active=True
+        )
+
+        Alice = CrewMember(
+            member_id="AL202",
+            name="Alice Johnson",
+            rank=Rank.OFFICER,
+            age=21,
+            specialization="Engineering",
+            years_experience=2,
+            is_active=True
+        )
+
+        mars_attack = SpaceMission(
+            mission_id="M2024_MARS",
+            mission_name="Mars Colony Establishment",
+            destination="Mars",
+            launch_date=datetime(2024, 8, 10, 14, 30),
+            duration_days=900,
+            crew=[Sarah, John, Alice],
+            mission_status="planned",
+            budget_millions=2500.0
+        )
+        print("Valid mission created:")
+        print(f"Mission: {mars_attack.mission_name}")
+        print(f"ID: {mars_attack.mission_id}")
+        print(f"Destination: {mars_attack.destination}")
+        print(f"Duration: {mars_attack.duration_days}")
+        print(f"Budget: ${mars_attack.budget_millions}M")
+        print(f"Crew size: {len(mars_attack.crew)}")
+        print("Crew members: ")
+        for member in mars_attack.crew:
+            print(f"- {member.name}({member.rank.value})"
+                  f" - {member.specialization}")
+
+        print("=========================================")
+        print("Expected validation error:")
+
         # Alice2 = CrewMember(
         #         member_id="A",
         #         name="Alice Johnson",

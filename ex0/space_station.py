@@ -17,28 +17,29 @@ class SpaceStation(BaseModel):
 def main() -> None:
 
     print("Valid station created:")
-
-    valid_station = SpaceStation(
-        station_id="ISS001",
-        name="International Space Station",
-        crew_size=10,
-        power_level=80,
-        oxygen_level=90,
-        last_maintenance=datetime(2026, 8, 10, 14, 30),
-        is_operational=True,
-        notes="whatever",
-        )
-
-    print(f"ID: {valid_station.station_id}")
-    print(f"Name: {valid_station.name}")
-    print(f"Crew: {valid_station.crew_size}")
-    print(f"Power: {valid_station.power_level}%")
-    print(f"Oxygen: {valid_station.oxygen_level}%")
-    print(f"Operational: {valid_station.is_operational}")
-
-    print("\n=======================================")
-    print("Expected validation error:")
     try:
+
+        valid_station = SpaceStation(
+                station_id="ISS001",
+                name="International Space Station",
+                crew_size=10,
+                power_level=80,
+                oxygen_level=90,
+                last_maintenance=datetime(2026, 8, 10, 14, 30),
+                is_operational=True,
+                notes="whatever",
+                )
+
+        print(f"ID: {valid_station.station_id}")
+        print(f"Name: {valid_station.name}")
+        print(f"Crew: {valid_station.crew_size}")
+        print(f"Power: {valid_station.power_level}%")
+        print(f"Oxygen: {valid_station.oxygen_level}%")
+        print(f"Operational: {valid_station.is_operational}")
+
+        print("\n=======================================")
+        print("Expected validation error:")
+
         wrong_station = SpaceStation(
             station_id="ISS001",
             name="International Space Station",
